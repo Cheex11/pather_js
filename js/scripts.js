@@ -39,14 +39,13 @@ $(document).ready(function(){
   var nGrid = Grid.create(4)
 
   nGrid.cells.forEach(function(cell,index){
-    $('#board').append('<td class="'+index+'">' + cell.state + '</td>')
 
-    // This will add at TR when necessary.
-    // if ((index % Math.sqrt(nGrid.size) == 0) && (index > 0)) {
-      // alert ('got here')
-      // $('#board').append('</tr id=' + cell.y_coord + '>' + STRING + '</tr>')
-    // }
-    // This adds TDs with cell objects inside of them.
+    if (index % Math.sqrt(nGrid.size) == 0) {
+      $('#board').append('<tr id="' + cell.y_coord + '"></tr>')
+    }
+
+    $('#' + cell.y_coord + '').append('<td class="'+index+'">' + cell.state + '</td>')
+
 
   });
 });
