@@ -17,7 +17,6 @@ var Grid = {
     }
     return size
   }
-
 };
 
 var Cell = {
@@ -27,7 +26,7 @@ var Cell = {
     return cell
   },
 	initialize: function(y_coord, x_coord){
-		this.state = '.';
+		this.state = 'dot';
     this.x_coord = x_coord;
     this.y_coord = y_coord;
 	}
@@ -36,17 +35,17 @@ var Cell = {
 
 $(document).ready(function(){
 
-  var nGrid = Grid.create(4)
+  var nGrid = Grid.create(10)
 
   nGrid.cells.forEach(function(cell,index){
-
     if (index % Math.sqrt(nGrid.size) == 0) {
       $('#board').append('<tr id="' + cell.y_coord + '"></tr>')
     }
+    $('#' + cell.y_coord + '').append('<td class="cell" id="'+cell.state+'" value="'+ cell.y_coord + cell.x_coord +'">' + '</td>')
+  });
 
-    $('#' + cell.y_coord + '').append('<td class="'+index+'">' + cell.state + '</td>')
-
-
+  $('.cell').click(function(){
+    $(this).attr({id:"hash"})
   });
 });
 

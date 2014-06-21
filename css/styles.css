@@ -1,0 +1,22 @@
+.cell	 {
+	width: 20px;
+	background-color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  height: 20px;
+  width: 20px;
+}
+
+body {
+background-color: black
+}
+
+td:hover {
+  background-color: white;
+  cursor: none;
+}
+
+#hash {
+	background-color: green;
+}
