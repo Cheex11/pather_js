@@ -17,6 +17,24 @@ var Grid = {
     }
     return size
   }
+
+
+
+  initialize_from_fruit_hunt: function() {
+
+    HEIGHT = Math.min(Math.floor(Board.random() * (Board.max_size-Board.min_size+1)) + Board.min_size, Board.max_size);
+    WIDTH = Math.min(Math.floor(Board.random() * (Board.max_size-Board.min_size+1)) + Board.min_size, Board.max_size);
+    Board.board = new Array(WIDTH);
+
+    for (var i=0; i<WIDTH; i++) {
+        Board.board[i] = new Array(HEIGHT);
+        for (var j=0; j<HEIGHT; j++) {
+            Board.board[i][j] = 0;
+        }
+    }
+  }
+
+
 };
 
 var Cell = {
